@@ -1,24 +1,25 @@
 # Statistical Modelling Studies
-### Three academic team projects in statistical computing and Bayesian inference
 
-These studies complement the independent research portfolio. They are presented as **collaborative MSc coursework**, with source-level contributions retained.
+**Three MSc team projects on recovering hidden processes, simulating systems and analysing variation between groups.**
 
-| Study | Statistical question | Implementation |
+These projects start from different practical questions: when infections happened before recorded deaths, how contact patterns change an epidemic, and how observed arrest associations vary between precincts. Each folder explains the question before the mathematics and code.
+
+| Study | Plain-language question | Technical approach |
 |---|---|---|
-| [Poisson deconvolution](poisson-deconvolution/) | How can a latent infection curve be reconstructed from delayed death counts? | B-spline basis, delay convolution, second-difference penalty, BIC selection and bootstrap intervals |
-| [SEIR contact networks](seir-contact-networks/) | How does household and non-household contact structure change epidemic dynamics? | Stochastic epidemic simulation with explicit contact-network construction |
-| [Bayesian multilevel associations](bayesian-multilevel-arrest-associations/) | How do observed arrest associations vary across precincts and time of day? | Bernoulli-logit models in brms, varying precinct effects, posterior checks and LOO comparison |
+| [Reconstructing infections from delayed deaths](poisson-deconvolution/) | What infection timeline could have produced the observed deaths? | Poisson deconvolution, penalised splines and bootstrap uncertainty |
+| [Epidemics on contact networks](seir-contact-networks/) | How do households and regular contacts affect simulated spread? | Stochastic susceptible–exposed–infectious–removed simulation |
+| [Variation in recorded arrest associations](bayesian-multilevel-arrest-associations/) | How do associations vary across precincts and time of day? | Bayesian logistic models with varying precinct effects |
 
-## Contribution
+## My contribution and team context
 
-For the Poisson study, **Fakhruddin Hakim Hussain** contributed bootstrap inference, plotting and the write-up. Mansi Neb contributed model/penalty matrices, likelihood and gradient; Riccardo Monforte contributed fitting and the lambda grid. The source records roughly equal overall effort.
+For the infection study, **Fakhruddin Hakim Hussain** contributed bootstrap inference, plotting and the write-up. Mansi Neb contributed model/penalty matrices, likelihood and gradient; Riccardo Monforte contributed fitting and the smoothing grid. The source records roughly equal overall effort.
 
-For the SEIR study, the source records approximately equal contributions by the same three authors across implementation, simulation and documentation. The Bayesian group archive does not specify individual ownership, so no sole-authorship claim is made. See [AUTHORS.md](AUTHORS.md).
+The SEIR study records approximately equal contributions by the same three authors across implementation, simulation and documentation. The Bayesian archive does not identify individual ownership, so no sole-authorship claim is made. [Contribution record](AUTHORS.md).
 
-## Reproduction and evidence
+## Evidence and reproduction
 
-Each folder contains its R script and input notes. Saved numerical results are not available for all studies, so no numerical performance claim is promoted here. This package has not been rerun in R. The Bayesian script uses LOO as its comparison criterion; an incorrect legacy DIC block has been removed and documented in [CHANGES.md](CHANGES.md).
+Each study includes an R script and input/run instructions. Not all original datasets, fitted objects or saved numerical results are available, and these R analyses were not rerun during this documentation review. Numerical success claims are therefore not promoted from missing artifacts.
 
-The arrest study is a descriptive conditional-association exercise. The administrative data and observed outcome do not identify causal effects, individual criminality or the fairness of policing decisions. No individual scoring tool is provided.
+The Bayesian study uses LOO predictive comparison; the removal of an incorrect legacy DIC block is documented in [CHANGES.md](CHANGES.md). Its observational records support descriptive associations, not causal effects, individual criminality or a verdict on policing fairness.
 
 [Main portfolio](https://github.com/Fakhruddin12)
