@@ -23,3 +23,11 @@ Each study includes an R script and input/run instructions. Not all original dat
 The Bayesian study uses LOO predictive comparison; the removal of an incorrect legacy DIC block is documented in [CHANGES.md](CHANGES.md). Its observational records support descriptive associations, not causal effects, individual criminality or a verdict on policing fairness.
 
 [Main portfolio](https://github.com/Fakhruddin12)
+
+## Reviewed project reports
+
+- [Poisson deconvolution](poisson-deconvolution/reports/PROJECT_REPORT.pdf): recovered-input Python replay, not an R rerun.
+- [SEIR contact networks](seir-contact-networks/reports/PROJECT_REPORT.pdf): seeded reference simulations and design limits.
+- [Multilevel Bayesian associations](bayesian-multilevel-arrest-associations/reports/PROJECT_REPORT.pdf): methods audit; original fitted evidence still missing.
+
+New Python dependencies are in `review_requirements.txt`. Original R analyses remain distinct from the new checks.

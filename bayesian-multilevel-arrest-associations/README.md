@@ -1,5 +1,9 @@
 # Bayesian Models of Recorded Arrest Associations
 
+[**Project report**](reports/PROJECT_REPORT.pdf) · [**Review verification**](reports/REVIEW_VERIFICATION.json) · [**Research decision**](docs/RESEARCH_DECISION.md)
+
+This remains a specification/source audit. Original 2025 input, 2024 prior fits, posterior objects and LOO diagnostics are absent. No numerical model ranking or convergence claim is made. An explicit HH:MM/HHMM parser replaces unsafe substring extraction; nine base-R contracts are provided but were not executed in this review.
+
 **How do associations in recorded stop-and-arrest data vary between precincts and times of day?**
 
 This MSc group exercise analyses an administrative dataset using models that allow precincts to differ. It studies conditional associations in the recorded sample; it does not infer a person's criminality or the causal effect of a demographic characteristic.
@@ -19,3 +23,7 @@ Rscript analysis.R
 The workbook and fitted posterior objects are not bundled. Assess MCMC diagnostics and LOO Pareto-k diagnostics before interpreting a new fit. The legacy DIC correction is recorded in [CHANGES.md](../CHANGES.md).
 
 Administrative selection and measurement processes limit interpretation. No causal or policing-fairness conclusion, individual scoring service or independently reproduced numerical result is claimed. The archive does not specify individual ownership; [team authorship](../AUTHORS.md) is retained.
+
+## Time input contract
+
+From this folder, `Rscript parser_checks.R` exercises nine parser examples without fitting a model or requiring brms. It accepts HH:MM or integer HHMM and rejects unsupported encodings. Inspect the workbook before interpreting numeric Excel time fractions. These contracts were not run here because R was unavailable.

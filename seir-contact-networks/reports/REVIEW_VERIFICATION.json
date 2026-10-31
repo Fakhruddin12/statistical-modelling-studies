@@ -1,0 +1,139 @@
+{
+  "reviewed_on": "2026-11-01",
+  "scope": "New seeded Python reference simulations of the archived equations; original R runs not reproduced.",
+  "population": 1000,
+  "days": 100,
+  "initial_infectious": 5,
+  "replicates_per_case": 50,
+  "master_seed": 20261101,
+  "cases": {
+    "1": {
+      "peak_infectious": {
+        "mean": 164.34,
+        "ci95_mean": [
+          160.15098663645006,
+          168.52901336354995
+        ]
+      },
+      "peak_day": {
+        "mean": 34.62,
+        "ci95_mean": [
+          33.109151549625174,
+          36.13084845037482
+        ]
+      },
+      "ever_infected_by_day99": {
+        "mean": 838.4,
+        "ci95_mean": [
+          833.5820469076588,
+          843.2179530923412
+        ]
+      },
+      "infectious_day99": {
+        "mean": 0.14,
+        "ci95_mean": [
+          -0.06198851452496004,
+          0.34198851452496004
+        ]
+      }
+    },
+    "2": {
+      "peak_infectious": {
+        "mean": 208.44,
+        "ci95_mean": [
+          203.95924406377674,
+          212.92075593622326
+        ]
+      },
+      "peak_day": {
+        "mean": 26.2,
+        "ci95_mean": [
+          25.170452526592385,
+          27.229547473407614
+        ]
+      },
+      "ever_infected_by_day99": {
+        "mean": 823.36,
+        "ci95_mean": [
+          819.1870567509251,
+          827.532943249075
+        ]
+      },
+      "infectious_day99": {
+        "mean": 0.02,
+        "ci95_mean": [
+          -0.01919999999999999,
+          0.05919999999999999
+        ]
+      }
+    },
+    "3": {
+      "peak_infectious": {
+        "mean": 155.48,
+        "ci95_mean": [
+          151.42193535783372,
+          159.53806464216626
+        ]
+      },
+      "peak_day": {
+        "mean": 37.44,
+        "ci95_mean": [
+          36.09931742757653,
+          38.780682572423466
+        ]
+      },
+      "ever_infected_by_day99": {
+        "mean": 879.66,
+        "ci95_mean": [
+          874.8042445531102,
+          884.5157554468898
+        ]
+      },
+      "infectious_day99": {
+        "mean": 0.46,
+        "ci95_mean": [
+          0.1184,
+          0.8016000000000001
+        ]
+      }
+    },
+    "4": {
+      "peak_infectious": {
+        "mean": 205.16,
+        "ci95_mean": [
+          201.0317857419945,
+          209.2882142580055
+        ]
+      },
+      "peak_day": {
+        "mean": 31.04,
+        "ci95_mean": [
+          29.93272832601931,
+          32.14727167398069
+        ]
+      },
+      "ever_infected_by_day99": {
+        "mean": 938.52,
+        "ci95_mean": [
+          935.4414054115555,
+          941.5985945884445
+        ]
+      },
+      "infectious_day99": {
+        "mean": 0.0,
+        "ci95_mean": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "invariants_passed_every_run": [
+    "population conserved",
+    "susceptibles nonincreasing",
+    "removed nondecreasing",
+    "network symmetric and no self/household links",
+    "transmission probabilities valid"
+  ],
+  "interpretation": "Conditional simulation outcomes only. Removing household/network transmission also raises alpha_random from 0.01 to 0.04, so this is not a one-factor causal test of contact structure. Replication intervals concern Monte Carlo mean precision, not real-world epidemic uncertainty."
+}

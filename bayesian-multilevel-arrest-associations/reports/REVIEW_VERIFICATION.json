@@ -1,0 +1,24 @@
+{
+  "reviewed_on": "2026-11-01",
+  "scope": "Source and specification audit only; original data, posterior draws and 2024 prior fits are unavailable.",
+  "candidate_models": 3,
+  "chains_per_model": 4,
+  "iterations_per_chain": 3000,
+  "warmup_per_chain": 1500,
+  "retained_draws_per_candidate_if_completed": 6000,
+  "model_fit_rerun": false,
+  "R_runtime_available": false,
+  "parser_contract_examples_written": 9,
+  "parser_contract_executed": false,
+  "main_changes": [
+    "Explicit HH:MM/HHMM parser with validation",
+    "Full candidate is no longer called selected without saved LOO output"
+  ],
+  "missing": [
+    "sqf-2025.xlsx original workbook",
+    "sqf-2024.xlsx and fitted prior-elicitation workflow",
+    "posterior objects and sampler diagnostics",
+    "LOO objects and Pareto-k diagnostics"
+  ],
+  "interpretation": "A descriptive group-level association study. No individual criminality, causal demographic effect, deployment accuracy, fairness verdict or winning model is established."
+}

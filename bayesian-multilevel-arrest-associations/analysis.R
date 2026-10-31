@@ -8,6 +8,22 @@ library(bayesplot)
 
 options(mc.cores = parallel::detectCores())
 
+parse_stop_hour <- function(x) {
+  text <- trimws(as.character(x))
+  hour <- minute <- rep(NA_integer_, length(text))
+  colon <- !is.na(text) & grepl("^[0-9]{1,2}:[0-9]{2}$", text)
+  hour[colon] <- as.integer(sub(":.*$", "", text[colon]))
+  minute[colon] <- as.integer(sub("^.*:", "", text[colon]))
+  hhmm <- !is.na(text) & grepl("^[0-9]{1,4}$", text)
+  value <- suppressWarnings(as.integer(text[hhmm]))
+  hour[hhmm] <- value %/% 100L
+  minute[hhmm] <- value %% 100L
+  valid <- !is.na(hour) & !is.na(minute) & hour >= 0L & hour <= 23L & minute >= 0L & minute <= 59L
+  hour[!valid] <- NA_integer_
+  hour
+}
+
+
 df_raw <- read_excel("sqf-2025.xlsx")
 
 
@@ -52,8 +68,8 @@ df_clean <- df_clean %>%
     precinct = factor(STOP_LOCATION_PRECINCT),
     weapon = factor(WEAPON_FOUND_FLAG),
 
-    # Extract hour from time string (HH format)
-    hour = suppressWarnings(as.integer(substr(as.character(STOP_FRISK_TIME), 1, 2))),
+    # Explicitly support HH:MM and integer HHMM; reject unsupported encodings.
+    hour = parse_stop_hour(STOP_FRISK_TIME),
 
     # Create time-of-day categorical variable
     time_bucket = case_when(
@@ -234,7 +250,7 @@ loo_compare(loo1, loo2, loo3)
 # LOO above is the retained model-comparison criterion.
 # The legacy DIC approximation was removed; see ../CHANGES.md.
 
-# Inspect priors for the selected model
+# Inspect priors for the full candidate; no winning model is assumed from missing LOO outputs.
 prior_summary(model_3)
 
 

@@ -9,3 +9,6 @@ __pycache__/
 .env.*
 .Rhistory
 .RData
+
+# Local reconstructed curves; input rights are not granted by this repository.
+poisson_curve_private.csv

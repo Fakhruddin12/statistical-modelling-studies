@@ -364,6 +364,9 @@ seir_matrix_case_4 = run_sim(beta = beta_new , h = h , alpha = alpha_new)
 plot_sim(seir_matrix_case_4 , case)
 
 #--------------------Outcome comments---------------------------------#
+# November 2026 review: these historical comments refer to unpreserved, unseeded
+# runs. The random-only cases also change alpha_r (0.01 to 0.04), so they do not
+# isolate a causal effect of contact structure. See reports/PROJECT_REPORT.pdf.
 
 ## Case 1 : Default Parameters
 

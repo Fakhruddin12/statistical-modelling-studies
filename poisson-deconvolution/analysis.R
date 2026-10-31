@@ -427,8 +427,10 @@ cat("Estimated time lag:", peak_dth - peak_inf, "days\n")
 #  indicating the model fits well.
 #- The estimated infection curve peaks ~20 days before the death peak,
 #  consistent with known infection-to-death delays for COVID-19.
-#- The infection peak is noticeably higher than the death peak, as
-#  expected since only a fraction of infections lead to death.
+#- f(t) represents infections leading to these observed hospital deaths.
+#  The normalised delay kernel does not identify all infections or a fatality rate.
+#  A higher peak can result from undoing temporal smoothing, not an estimated
+#  infection-fatality fraction.
 #- Bootstrap confidence bands are tight around the epidemic peak and
 #  wider in early and late periods, reflecting uncertainty where fewer
 #  data points are informative.
